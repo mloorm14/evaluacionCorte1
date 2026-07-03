@@ -23,6 +23,6 @@ curl -I http://localhost:8080/login
 
 ## Instrucciones de Ejecución
 
-1. Clone el repositorio e ingrese al directorio ejecutando en terminal: `git clone https://github.com/usuario/materias-aguirre.git && cd materias-aguirre`.
+1. Clone el repositorio ejecutando en terminal: `git clone https://github.com/mloorm14/evaluacionCorte1.git`.
 2. Duplique el entorno base para el levantamiento de los contenedores: `cp .env.example .env`.
 3. Inicie los servicios aislados de base de datos y servidor web ejecutando: `docker compose up -d --build`.
