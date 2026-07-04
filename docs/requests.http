@@ -1,0 +1,16 @@
+### Login Exitoso con Credenciales Semilla
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=Admin*2026&csrf_token=TOKEN_DE_LA_VISTA
+
+### Obtener Listado de Materias (Requiere Cookie de Sesión)
+GET http://localhost:8080/materias
+Cookie: PHPSESSID=tu_cookie_aqui
+
+### Intentar Crear Materia con Datos Inválidos
+POST http://localhost:8080/materias
+Content-Type: application/x-www-form-urlencoded
+Cookie: PHPSESSID=tu_cookie_aqui
+
+codigo=APW&nombre=Web&creditos=10&semestre=15&csrf_token=TOKEN

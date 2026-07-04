@@ -1,0 +1,6 @@
+# Decisiones Técnicas - Examen Unidad II
+
+1. **Arquitectura por Capas Estricta en PHP**: Se implementó una separación rígida dividiendo las responsabilidades en Controladores (captura de flujos de peticiones y respuestas), Servicios (reglas de negocio y lógica de validación interna) y Repositorios/DAO (encapsulación total del SQL parametrizado), aislando por completo la infraestructura de la interfaz web.
+2. **Motor de Base de Datos PostgreSQL**: Se seleccionó PostgreSQL 16 para dar soporte nativo al tipo de datos `BIGSERIAL` y los constraints de verificación estipulados en los requerimientos (`CHECK creditos` y `CHECK semestre`).
+3. **Mecanismo de Enrutamiento Front Controller**: Se configuró Apache con `.htaccess` reescribiendo los destinos hacia `index.php`. El despachador parsea dinámicamente la URI y los verbos HTTP evitando dependencias externas de librerías de terceros.
+4. **Blindaje de Sesiones y Protección OWASP**: Las sesiones imponen políticas estrictas a través de opciones nativas (`HttpOnly`, `SameSite=Strict`). Los ataques XSS son mitigados con un helper global que sanitiza con la flag `ENT_QUOTES`, y el flujo CSRF inyecta tokens criptográficamente seguros validados con funciones de tiempo constante (`hash_equals`).
